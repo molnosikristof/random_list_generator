@@ -1,0 +1,18 @@
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'random_list.css' %}">
+  <title>List</title>
+</head>
+<body>
+<ol class="gradient-list">
+  {% for list_element in list %}
+      <li>{{ list_element }} </li>
+  {% endfor %} 
+</ol>
+<form action='/mix/{{list_name}}' method='GET'>
+  <button type='submit'>Mix {{ list_name }}</button>
+</form>
+<h4><a href='/'>Main page</a></h4>
+<body>
+</html>

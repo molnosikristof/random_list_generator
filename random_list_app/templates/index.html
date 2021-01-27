@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'random_list.css' %}">
+  <title>Random List generator</title>
+</head>
+<body>
+<h2>
+    <a href="/list-form">New list</a>
+<h2>
+<h3>
+    Lists:
+</h3>
+  <ol class="gradient-list">
+  {% for list in lists %}
+      <li><a href="/list/{{ list }}">{{ list }} </a></li>
+  {% endfor %} 
+  </ol>
+</body>
+</html>

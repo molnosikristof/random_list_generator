@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" href="{% static 'random_list.css' %}">
+  <title>Random List generator</title>
+</head>
+<body>
+<h3>
+    Change your list
+</h3>
+<form action="/list-form/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+  <ol class="gradient-list">
+  {% for list_element in list %}
+      <li>{{ list_element }} </li>
+  {% endfor %} 
+  </ol>
+
+<h4><a href='/'>Main page</a></h4>
+</body>
+</html>
